@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7041928198E2D3400F52289 /* D9ClientAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7041927198E2D3400F52289 /* D9ClientAddViewController.m */; };
+		C704192B198E303D00F52289 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = C704192A198E303D00F52289 /* ContactDao.m */; };
+		C704192E198E31E500F52289 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = C704192D198E31E500F52289 /* Contact.m */; };
+		C7041937198E354900F52289 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7041936198E354900F52289 /* ContactCell.m */; };
+		C7A2D2E419909988001CDC85 /* D9ClientEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A2D2E319909988001CDC85 /* D9ClientEditViewController.m */; };
+		C7B7DEEF19A6DF120044019E /* Array.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7B7DEE919A6DF120044019E /* Array.mm */; };
+		C7B7DEF019A6DF120044019E /* multipy_unicode.dat in Resources */ = {isa = PBXBuildFile; fileRef = C7B7DEEA19A6DF120044019E /* multipy_unicode.dat */; };
+		C7B7DEF119A6DF120044019E /* SearchCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7B7DEEC19A6DF120044019E /* SearchCore.mm */; };
+		C7B7DEF219A6DF120044019E /* SearchCoreManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = C7B7DEEE19A6DF120044019E /* SearchCoreManager.mm */; };
 		C7F7E92B198E0A280015AF74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F7E92A198E0A280015AF74 /* Foundation.framework */; };
 		C7F7E92D198E0A280015AF74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F7E92C198E0A280015AF74 /* CoreGraphics.framework */; };
 		C7F7E92F198E0A280015AF74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F7E92E198E0A280015AF74 /* UIKit.framework */; };
@@ -21,6 +30,7 @@
 		C7F7E94C198E0A280015AF74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F7E92E198E0A280015AF74 /* UIKit.framework */; };
 		C7F7E954198E0A280015AF74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7F7E952198E0A280015AF74 /* InfoPlist.strings */; };
 		C7F7E956198E0A280015AF74 /* ClientMnagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F7E955198E0A280015AF74 /* ClientMnagementTests.m */; };
+		C7F7E960198E0B040015AF74 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F7E95F198E0B040015AF74 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7041926198E2D3400F52289 /* D9ClientAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D9ClientAddViewController.h; sourceTree = "<group>"; };
+		C7041927198E2D3400F52289 /* D9ClientAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D9ClientAddViewController.m; sourceTree = "<group>"; };
+		C7041929198E303D00F52289 /* ContactDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDao.h; sourceTree = "<group>"; };
+		C704192A198E303D00F52289 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
+		C704192C198E31E500F52289 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		C704192D198E31E500F52289 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		C7041935198E354900F52289 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = ../ContactCell.h; sourceTree = "<group>"; };
+		C7041936198E354900F52289 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = ../ContactCell.m; sourceTree = "<group>"; };
+		C7A2D2E219909988001CDC85 /* D9ClientEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D9ClientEditViewController.h; sourceTree = "<group>"; };
+		C7A2D2E319909988001CDC85 /* D9ClientEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = D9ClientEditViewController.m; sourceTree = "<group>"; };
+		C7B7DEE819A6DF120044019E /* Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
+		C7B7DEE919A6DF120044019E /* Array.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Array.mm; sourceTree = "<group>"; };
+		C7B7DEEA19A6DF120044019E /* multipy_unicode.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = multipy_unicode.dat; sourceTree = "<group>"; };
+		C7B7DEEB19A6DF120044019E /* SearchCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCore.h; sourceTree = "<group>"; };
+		C7B7DEEC19A6DF120044019E /* SearchCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SearchCore.mm; sourceTree = "<group>"; };
+		C7B7DEED19A6DF120044019E /* SearchCoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCoreManager.h; sourceTree = "<group>"; };
+		C7B7DEEE19A6DF120044019E /* SearchCoreManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SearchCoreManager.mm; sourceTree = "<group>"; };
 		C7F7E927198E0A280015AF74 /* ClientMnagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientMnagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F7E92A198E0A280015AF74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C7F7E92C198E0A280015AF74 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +80,7 @@
 		C7F7E951198E0A280015AF74 /* ClientMnagementTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClientMnagementTests-Info.plist"; sourceTree = "<group>"; };
 		C7F7E953198E0A280015AF74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C7F7E955198E0A280015AF74 /* ClientMnagementTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientMnagementTests.m; sourceTree = "<group>"; };
+		C7F7E95F198E0B040015AF74 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F7E960198E0B040015AF74 /* libsqlite3.dylib in Frameworks */,
 				C7F7E92D198E0A280015AF74 /* CoreGraphics.framework in Frameworks */,
 				C7F7E92F198E0A280015AF74 /* UIKit.framework in Frameworks */,
 				C7F7E92B198E0A280015AF74 /* Foundation.framework in Frameworks */,
@@ -79,6 +108,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7B7DEE719A6DF120044019E /* SearchCore */ = {
+			isa = PBXGroup;
+			children = (
+				C7B7DEE819A6DF120044019E /* Array.h */,
+				C7B7DEE919A6DF120044019E /* Array.mm */,
+				C7B7DEEA19A6DF120044019E /* multipy_unicode.dat */,
+				C7B7DEEB19A6DF120044019E /* SearchCore.h */,
+				C7B7DEEC19A6DF120044019E /* SearchCore.mm */,
+				C7B7DEED19A6DF120044019E /* SearchCoreManager.h */,
+				C7B7DEEE19A6DF120044019E /* SearchCoreManager.mm */,
+			);
+			path = SearchCore;
+			sourceTree = "<group>";
+		};
 		C7F7E91E198E0A280015AF74 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +144,7 @@
 		C7F7E929198E0A280015AF74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7F7E95F198E0B040015AF74 /* libsqlite3.dylib */,
 				C7F7E92A198E0A280015AF74 /* Foundation.framework */,
 				C7F7E92C198E0A280015AF74 /* CoreGraphics.framework */,
 				C7F7E92E198E0A280015AF74 /* UIKit.framework */,
@@ -112,9 +156,11 @@
 		C7F7E930198E0A280015AF74 /* ClientMnagement */ = {
 			isa = PBXGroup;
 			children = (
-				C7F7E939198E0A280015AF74 /* D9AppDelegate.h */,
-				C7F7E93A198E0A280015AF74 /* D9AppDelegate.m */,
 				C7F7E93C198E0A280015AF74 /* Main.storyboard */,
+				C7A2D2E219909988001CDC85 /* D9ClientEditViewController.h */,
+				C7A2D2E319909988001CDC85 /* D9ClientEditViewController.m */,
+				C7041926198E2D3400F52289 /* D9ClientAddViewController.h */,
+				C7041927198E2D3400F52289 /* D9ClientAddViewController.m */,
 				C7F7E93F198E0A280015AF74 /* D9ViewController.h */,
 				C7F7E940198E0A280015AF74 /* D9ViewController.m */,
 				C7F7E942198E0A280015AF74 /* Images.xcassets */,
@@ -126,6 +172,15 @@
 		C7F7E931198E0A280015AF74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7B7DEE719A6DF120044019E /* SearchCore */,
+				C7041935198E354900F52289 /* ContactCell.h */,
+				C7041936198E354900F52289 /* ContactCell.m */,
+				C704192C198E31E500F52289 /* Contact.h */,
+				C704192D198E31E500F52289 /* Contact.m */,
+				C7041929198E303D00F52289 /* ContactDao.h */,
+				C704192A198E303D00F52289 /* ContactDao.m */,
+				C7F7E939198E0A280015AF74 /* D9AppDelegate.h */,
+				C7F7E93A198E0A280015AF74 /* D9AppDelegate.m */,
 				C7F7E932198E0A280015AF74 /* ClientMnagement-Info.plist */,
 				C7F7E933198E0A280015AF74 /* InfoPlist.strings */,
 				C7F7E936198E0A280015AF74 /* main.m */,
@@ -229,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B7DEF019A6DF120044019E /* multipy_unicode.dat in Resources */,
 				C7F7E943198E0A280015AF74 /* Images.xcassets in Resources */,
 				C7F7E935198E0A280015AF74 /* InfoPlist.strings in Resources */,
 				C7F7E93E198E0A280015AF74 /* Main.storyboard in Resources */,
@@ -250,9 +306,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A2D2E419909988001CDC85 /* D9ClientEditViewController.m in Sources */,
+				C7B7DEF219A6DF120044019E /* SearchCoreManager.mm in Sources */,
 				C7F7E937198E0A280015AF74 /* main.m in Sources */,
 				C7F7E93B198E0A280015AF74 /* D9AppDelegate.m in Sources */,
+				C7B7DEF119A6DF120044019E /* SearchCore.mm in Sources */,
+				C704192B198E303D00F52289 /* ContactDao.m in Sources */,
+				C7041937198E354900F52289 /* ContactCell.m in Sources */,
+				C704192E198E31E500F52289 /* Contact.m in Sources */,
+				C7B7DEEF19A6DF120044019E /* Array.mm in Sources */,
 				C7F7E941198E0A280015AF74 /* D9ViewController.m in Sources */,
+				C7041928198E2D3400F52289 /* D9ClientAddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +521,7 @@
 				C7F7E95B198E0A280015AF74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7F7E95C198E0A280015AF74 /* Build configuration list for PBXNativeTarget "ClientMnagementTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +530,7 @@
 				C7F7E95E198E0A280015AF74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
