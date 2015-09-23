@@ -15,7 +15,7 @@
     NSString *_address;
     NSString *_phone;
     NSString *_email;
-    NSString *_remark;
+    NSString *_ID;
 }
 
 // 属性：人员编号
@@ -34,11 +34,11 @@
 @property (strong,nonatomic) NSString *email;
 
 // 属性：备注
-@property (strong,nonatomic) NSString *remark;
+@property (strong,nonatomic) NSString *ID;
 
 
 // 方法：初始化参数
--(id) initWithName:(NSString*)name  Address:(NSString*)address Phone:(NSString*)phone Remark:(NSString*)remark ;
+-(id) initWithName:(NSString*)name  Address:(NSString*)address Phone:(NSString*)phone ID:(NSString*)ID ;
 
 
 @end

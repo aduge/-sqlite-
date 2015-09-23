@@ -155,11 +155,11 @@
     BOOL success = NO;
     if([self open])
     {
-        NSString *sql = [[NSString alloc] initWithFormat:@"UPDATE CONTACT SET NAME='%@', ADDRESS='%@', PHONE='%@' WHERE (ID='%@') ",model.name, model.address,model.phone,model.remark];
+        NSString *sql = [[NSString alloc] initWithFormat:@"UPDATE CONTACT SET NAME='%@', ADDRESS='%@', PHONE='%@' WHERE (ID='%@') ",model.name, model.address,model.phone,model.ID];
         const char *query_stmt = [sql UTF8String];
         if (sqlite3_exec(database, query_stmt, NULL, NULL, &errorMsg) == SQLITE_OK)
         {
-            NSLog(@"更新数据成功！'%@','%@','%@','%@'",model.remark,model.name,model.address,model.phone);
+            NSLog(@"更新数据成功！'%@','%@','%@','%@'",model.ID,model.name,model.address,model.phone);
             success = YES;
         } else {
             NSLog(@"更新数据失败！%s",errorMsg);
@@ -189,10 +189,10 @@
                 NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
                 NSString *address = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 2)];
                 NSString *phone = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 3)];
-                NSString *remark = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 4)];
+                NSString *ID = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 4)];
                 Contact *person = [[Contact alloc] initWithName:name
                                                                                             Address:address
-                                                          Phone:phone Remark:remark
+                                                          Phone:phone ID:ID
                                                         ];
     
                 // 添加对像到数组中
@@ -223,11 +223,11 @@
                 NSString *address = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 2)];
                 NSString *phone = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 3)];
                 
-                NSString *remark = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 4)];
+                NSString *ID = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 4)];
                 // 创建一个新对像，并且初始化赋值
                 person = [[Contact alloc] initWithName:name
                                                   Address:address
-                                                  Phone:phone      Remark:remark
+                                                  Phone:phone   ID:ID
                           
                                                 ];
             }

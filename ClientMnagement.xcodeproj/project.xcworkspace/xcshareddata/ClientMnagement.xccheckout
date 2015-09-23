@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CBF5F9E1-0909-4BDA-BA67-AC01E36ECCF4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ClientMnagement</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>502C5B6E2A874A4FF6BA5CFA74966C6E4F04651F</key>
+		<string>https://github.com/aduge/-sqlite-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ClientMnagement.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>502C5B6E2A874A4FF6BA5CFA74966C6E4F04651F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aduge/-sqlite-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>502C5B6E2A874A4FF6BA5CFA74966C6E4F04651F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>502C5B6E2A874A4FF6BA5CFA74966C6E4F04651F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E5%9F%BA%E4%BA%8Esqlite%E7%9A%84%E8%81%94%E7%B3%BB%E4%BA%BA%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5</string>
+		</dict>
+	</array>
+</dict>
+</plist>

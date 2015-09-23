@@ -26,7 +26,7 @@
 @property NSString *rowNumber;
 @property BOOL isSearchOn;
 @property NSString *iname;
-//定义全局变量方便取值，remark就是ID值，根据ID值update数据，ID值是自增长主键
-@property NSString *remark;
+//根据ID值update数据，ID值是自增长主键
+@property NSString *ID;
 
 @end

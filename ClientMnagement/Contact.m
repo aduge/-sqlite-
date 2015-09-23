@@ -15,11 +15,11 @@
 @synthesize address=_address;
 @synthesize phone=_phone;
 @synthesize email=_email;
-@synthesize remark=_remark;
+@synthesize ID=_ID;
 
 
 // 方法：初始化参数
--(id) initWithName:(NSString*)name Address:(NSString*)address Phone:(NSString*)phone Remark:(NSString *)remark
+-(id) initWithName:(NSString*)name Address:(NSString*)address Phone:(NSString*)phone ID:(NSString *)ID
 {
     self = [super init];
     if (self)
@@ -29,7 +29,7 @@
     
         _address = address; // 设置地址
         _phone = phone; // 设置电话
-        _remark=remark;
+        _ID=ID;
             }
     return self;
 }
@@ -42,7 +42,7 @@
     self.address = nil;
     self.phone = nil;
     self.email = nil;
-    self.remark = nil;
+    self.ID = nil;
 }
 
 

@@ -17,7 +17,7 @@
 @synthesize editClientPhone;
 @synthesize editClientAddress;
 @synthesize rowNumber;
-@synthesize remark;
+@synthesize ID;
 @synthesize isSearchOn;
 @synthesize iname;
 
@@ -39,7 +39,7 @@
         self.editClientPhone.text=p.phone;
         self.editClientAddress.text=p.address;
         
-        remark=p.remark;
+        ID=p.ID;
 
     }else{
     ContactDao *dao=[[ContactDao alloc]init];
@@ -50,7 +50,7 @@
     self.editClientPhone.text=p.phone;
     self.editClientAddress.text=p.address;
     
-        remark=p.remark;
+        ID=p.ID;
     }
     
     
@@ -78,8 +78,8 @@
 
 - (IBAction)editSaveToDataBase:(id)sender {
     ContactDao *dao=[[ContactDao alloc]init];
-    Contact *editContact=[[Contact alloc]initWithName:self.editClientName.text Address:self.editClientAddress.text Phone:self.editClientPhone.text Remark:remark];
-    NSLog(@"现在修改的条目的ID号是""%@",remark);
+    Contact *editContact=[[Contact alloc]initWithName:self.editClientName.text Address:self.editClientAddress.text Phone:self.editClientPhone.text ID:ID];
+    NSLog(@"现在修改的条目的ID号是""%@",ID);
     [dao update:editContact];
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"修改联系人成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

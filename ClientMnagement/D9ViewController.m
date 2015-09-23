@@ -50,10 +50,10 @@
         NSNumberFormatter *numberFormatter=[[NSNumberFormatter alloc]init];
         NSNumber *ID=[[NSNumber alloc]init];
         
-        ID=[numberFormatter numberFromString:p.remark];
+        ID=[numberFormatter numberFromString:p.ID];
         NSMutableArray *phoneArray = [[NSMutableArray alloc] init];
         [phoneArray addObject:p.phone];
-        NSLog(@"%@",p.remark);
+        NSLog(@"%@",p.ID);
         
         [[SearchCoreManager share]AddContact:ID name:p.name phone:phoneArray];
         //用强制类型转换后的数据ID
@@ -101,14 +101,7 @@
     ContactCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
    
     if (isSearchOn) {
-//        NSString *iname = [searchResult objectAtIndex:indexPath.row];
-//        ContactDao *dao =[[ContactDao alloc]init];
-//        Contact *p=[dao selectContact:iname];
-//        cell.name =iname;
-//        cell.address=p.address;
-//        cell.phone=p.phone;
-//        //搜索时候就传名字值，不搜索的时候传行号
-//        self.selectedName=iname;
+
         NSNumber *localID = nil;
         NSMutableString *matchString = [NSMutableString string];
         NSMutableArray *matchPos = [NSMutableArray array];
@@ -134,15 +127,11 @@
         p = [contactDic objectForKey:localID];
         NSLog(@"%@",p.name);
         cell.name = p.name;
-        //        cell.detailTextLabel.text = matchString;
-        
-        
+        self.selectedName = p.name;//搜索到只剩一个人的时候才能准确找到此人，第一个iOSdemo有很多不足的地方
         return cell;
         
     } else {
         Contact *p = [listContact objectAtIndex:indexPath.row];
-        //    NSLog(@"现在的indexPath是： %ld",(long)indexPath.row);
-//          Contact *p = [[self.contactDic allValues] objectAtIndex:indexPath.row];
         cell.name = p.name;  // 显示姓名
         cell.phone = p.phone; // 显示电话
         cell.address = p.address; // 显示通讯地址
@@ -175,7 +164,7 @@
         NSLog(@"%@",p.name);
         NSNumberFormatter *numberFormatter=[[NSNumberFormatter alloc]init];
         NSNumber *ID=[[NSNumber alloc]init];
-        ID=[numberFormatter numberFromString:p.remark];
+        ID=[numberFormatter numberFromString:p.ID];
         [[SearchCoreManager share]DeleteContact:ID];
         [dao deleteContact:p];
         
@@ -208,7 +197,6 @@
         isSearchOn = YES;
         canSelectRow = YES;
         self.utableView.scrollEnabled = YES;
-//        [self searchContactTbleView];
          [[SearchCoreManager share] Search:searchText searchArray:nil nameMatch:searchByName phoneMatch:self.searchByPhone];
     }
     else
@@ -220,31 +208,7 @@
     [self.utableView reloadData];
 }
 
-// 方法：搜索结果
--(void) searchContactTbleView
-{
-//    [searchResult removeAllObjects];
-//    [contactNameList removeAllObjects];//终于找到没搜一次结果就加一的原因了，因为contactnamelist没有清空
-//    NSInteger i;
-//    for (i=0; i<[listContact count]; i++) {
-//         Contact *p = [listContact objectAtIndex:i];
-//        [contactNameList addObject:p.name];
-//    }
-//   
-//    for (NSString *str in contactNameList) {
-//        NSRange nameResultsRange=[str rangeOfString:searchBar.text
-//                                             options:NSCaseInsensitiveSearch];
-//        if(nameResultsRange.length>0)
-//            [searchResult addObject:str];
-//    }
 
-}
-
-// 事件：键盘上的搜索按钮事件
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-//    [self searchContactTbleView];
-}
 
 // 事件：搜索框里取消按钮事件
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
@@ -252,7 +216,6 @@
     isSearchOn = NO;
     canSelectRow = YES;
     self.utableView.scrollEnabled = YES;
-//    self.navigationItem.rightBarButtonItem = nil;
     
     [self.searchBar resignFirstResponder];
     [self.utableView reloadData];
