@@ -16,13 +16,13 @@
    NSMutableArray *listContact;
     
     //搜索结果列表
+
     NSMutableArray *searchResult;
     NSMutableArray *contactNameList;
     
     IBOutlet UISearchBar *searchBar;
     
-    BOOL isSearchOn;
-    BOOL canSelectRow;
+
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *utableView;
@@ -32,6 +32,10 @@
 @property NSString *rowSelected;
 
 @property NSString *selectedName;
+
+@property RACTuple *tuple;
+@property BOOL isSearchOn;
+//@property BOOL canSelectRow;
 
 @property (nonatomic,retain) NSMutableDictionary *contactDic;
 @property (nonatomic,retain) NSMutableArray *searchByName;

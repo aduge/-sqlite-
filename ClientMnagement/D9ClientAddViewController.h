@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *ClientName;
 @property (strong, nonatomic) IBOutlet UITextField *ClientPhone;
 @property (strong, nonatomic) IBOutlet UITextField *ClientCompany;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveBarButton;
 
 @end

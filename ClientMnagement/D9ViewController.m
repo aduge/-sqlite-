@@ -9,6 +9,7 @@
 #import "D9ViewController.h"
 #import "D9ClientEditViewController.h"
 #import "SearchCoreManager.h"
+#import "UISearchBar+RAC.h"
 @interface D9ViewController ()
 
 @end
@@ -24,7 +25,41 @@
 - (void)viewDidLoad
 
 {
+    [super viewDidLoad];
+
+    [self initDao];
     
+	
+    //searchBar_RAC
+    self.tuple = [[RACTuple alloc]init];
+    RAC(self,tuple) = [self rac_liftSelector:@selector(search:) withSignalsFromArray:@[self.searchBar.rac_textSignal]];
+    @weakify(self);
+    [self.searchBar.rac_textSignal subscribeNext:^(id x) {
+        @strongify(self);
+        searchByName = self.tuple.first;
+        searchByPhone = self.tuple.second;
+        [self.utableView reloadData];
+    }];
+    
+    RAC(self,isSearchOn) = [[self.searchBar rac_isActiveSignal]doNext:^(id x) {
+        if ([x boolValue]) {
+            //
+        } else {
+            @strongify(self);
+            searchBar.text = @"";
+            self.tuple = [self search:@""];
+            searchByName = self.tuple.first;
+            searchByPhone = self.tuple.second;
+            [searchBar resignFirstResponder];
+            [self.utableView reloadData];
+        }
+        
+    }];
+
+
+}
+-(void)initDao
+{
     // 实例化DAO
     ContactDao *dao = [[ContactDao alloc] init];
     
@@ -34,8 +69,7 @@
     searchResult = [[NSMutableArray alloc] init];
     contactNameList = [[NSMutableArray alloc] init];
     //设置状态
-    isSearchOn=NO;
-    canSelectRow=YES;
+    _isSearchOn=NO;
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
     self.contactDic=dic;
@@ -59,15 +93,14 @@
         //用强制类型转换后的数据ID
         
         [self.contactDic setObject:p forKey:ID];
-
+        
     }
 
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     
-       //刷新界面？
+       //刷新界面
     ContactDao *dao = [[ContactDao alloc] init];
     listContact=[dao selectAll];
     [utableView reloadData];
@@ -83,11 +116,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (isSearchOn) {
+    if (_isSearchOn) {
         return [self.searchByName count] + [self.searchByPhone count];
-
-        
-    } else {
+        } else {
         return [listContact count];
     }
     
@@ -95,12 +126,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"现在调用的函数是： tableView:cellForRowAtIndexPath:");
-    
     static NSString *CellIdentifier = @"Cell";
     ContactCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
    
-    if (isSearchOn) {
+    if (_isSearchOn) {
 
         NSNumber *localID = nil;
         NSMutableString *matchString = [NSMutableString string];
@@ -123,7 +152,6 @@
             }
         }
         Contact *p=[[Contact alloc]init];
-
         p = [contactDic objectForKey:localID];
         NSLog(@"%@",p.name);
         cell.name = p.name;
@@ -174,56 +202,18 @@
         }
     }
 
-#pragma mark - 添加搜索方法与事件
-
-// 事件：搜索框开始输入字符
--(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+-(RACTuple*)search:(NSString*)searchText
 {
-    // 进入搜索状态
-    isSearchOn = YES;
-    
-    // 不能选择行
-    canSelectRow = NO;
-    
-    // 关闭滚动条的显示
-    self.utableView.scrollEnabled = NO;
-}
-
-// 事件：搜索框中文字发生变化触发
--(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    if ([searchText length]>0)
-    {
-        isSearchOn = YES;
-        canSelectRow = YES;
-        self.utableView.scrollEnabled = YES;
-         [[SearchCoreManager share] Search:searchText searchArray:nil nameMatch:searchByName phoneMatch:self.searchByPhone];
-    }
-    else
-    {
-        isSearchOn = NO;
-        canSelectRow = NO;
-        self.utableView.scrollEnabled = NO;
-    }
-    [self.utableView reloadData];
+     [[SearchCoreManager share] Search:searchText searchArray:nil nameMatch:searchByName phoneMatch:self.searchByPhone];
+    RACTuple *tuple_return = [RACTuple tupleWithObjects:searchByName,searchByPhone, nil];
+    return tuple_return;
 }
 
 
-
-// 事件：搜索框里取消按钮事件
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    isSearchOn = NO;
-    canSelectRow = YES;
-    self.utableView.scrollEnabled = YES;
-    
-    [self.searchBar resignFirstResponder];
-    [self.utableView reloadData];
-}
 #pragma mark-界面跳转传值
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ClientEditSegue"]) {
-        if (isSearchOn) {
+        if (_isSearchOn) {
             UIViewController *viewController = segue.destinationViewController;
             D9ClientEditViewController *d9ClientEditViewController = (D9ClientEditViewController*)viewController;
             //此时传名字值和查找状态
